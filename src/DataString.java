@@ -9,4 +9,5 @@ public class DataString {
         this.data = data;
         this.usage = usage;
     }
+
 }

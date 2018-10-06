@@ -14,25 +14,27 @@ public class Console {
 
     }
 
-    public void SetFile(String s){
+    public void convertFile(String s){
 
-        converter.SetFile(s);
-        System.out.println("Filepath: "+s);
+        converter.convertFile(s);
+        System.out.println("File: "+s+" "+"converted");
 
     }
 
-    public void ConvertFile(){
-        converter.ConvertFile();
-        System.out.println("Converted");
-    }
-
-    public void GetTxTContent(){
+    public void getTxTContent(){
 
         System.out.println("TxTContent:");
 
-        for (int i = 0;i<converter.TxTContent().length;i++){
-            System.out.println(converter.TxTContent()[i]);
+        for (int i = 1;i<converter.TxTContent().length;i++){
+            System.out.println(converter.TxTContent()[i].data+" : "+converter.TxTContent()[i].usage);
         }
+    }
+
+    public void sort(){
+
+        converter.sort();
+        System.out.println("File sorted");
+
     }
 
     public void run(){
@@ -41,22 +43,22 @@ public class Console {
 
 
         switch (comand){
-            case "Content":
+            case "content":
 
-                GetTxTContent();
+                getTxTContent();
 
                 break;
 
-            case "setFile":
+            case "convertFile":
 
                 System.out.println("Write filepath");
-                SetFile(s.next());
+                convertFile(s.next());
 
                 break;
 
-            case "convert":
+            case "sort":
 
-                ConvertFile();
+                sort();
 
                 break;
 
